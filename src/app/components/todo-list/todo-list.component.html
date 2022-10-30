@@ -1,0 +1,15 @@
+<!-- Todo: set container and lsit and place holder data-->
+<div class="container">
+    <!-- Content here -->
+    <div class="d-flex justify-content-between mt-3">
+        <h1>Todo Lsit</h1>
+        <div class="d-flex flex-column">
+            <label for="new-todo" class="d-flex justify-content-end" id="input-label">Add</label>
+           <span><input type="text" name="new-todo" (newTodo)="newTodo" /><button type="submit" class="btn btn-success">Submit</button></span>
+        </div>
+    </div>
+    <ul class="list-group" *ngFor="let t of todos">
+        <!-- <li class="list-group-item">{{ t.title }}</li> -->
+        <app-todo [todo]="t"></app-todo>
+    </ul>
+</div>
