@@ -1,1 +1,11 @@
-<li class="list-group-item">{{ todo.title }}</li>
+<li class="list-group-item">
+    <div class="d-flex w-100 justify-content-around">
+        <h5 class="mb-1">{{ todo.title }}</h5>
+        <small>3 days ago</small>
+        <div class="d-inline-flex p-2">
+            <button>Save</button> 
+            &nbsp;
+            <button>Delete</button>
+        </div>
+    </div>
+</li>
