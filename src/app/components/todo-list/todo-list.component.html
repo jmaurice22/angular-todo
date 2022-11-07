@@ -5,11 +5,11 @@
         <h1>Todo Lsit</h1>
         <div class="d-flex flex-column">
             <label for="new-todo" class="d-flex justify-content-end" id="input-label">Add</label>
-           <span><input type="text" name="new-todo" (newTodo)="newTodo" /><button type="submit" class="btn btn-success">Submit</button></span>
+           <input type="text" class="form-control" placeholder="Username" aria-label="Username" name="new-todo" (newTodo)="newTodo" />
+           <button type="submit" class="btn btn-success mt-2">Submit</button>
         </div>
     </div>
-    <ul class="list-group" *ngFor="let t of todos">
-        <!-- <li class="list-group-item">{{ t.title }}</li> -->
-        <app-todo [todo]="t"></app-todo>
+    <ul class="list-group" *ngFor="let todo of todos">
+        <app-todo [todo]="todo"></app-todo>
     </ul>
 </div>

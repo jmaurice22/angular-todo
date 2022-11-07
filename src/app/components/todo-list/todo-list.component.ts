@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Todo } from 'src/app/models/todo';
+import { TodoServiceService } from 'src/app/services/todo-service.service';
 
 
 @Component({
@@ -11,27 +12,15 @@ export class TodoListComponent implements OnInit {
   // var w/input devorate for new todo submit event
   @Input() newTodo!: Todo;
   // Todo: Get array of todos from service
-  todos: Todo[] = [
-      {
-      id:1,
-      title: 'Todo One',
-    },
-    {
-      id:1,
-      title: 'Todo Two',
-    
-    },
-    {
-      id:1,
-      title: 'Todo Three',
-     
-    }
-  ];
+  todos: Todo[] = [];
   
-  constructor() { }
-
+  constructor(private todoservice: TodoServiceService) { }
+  
   ngOnInit(): void {
- 
+    this.getTodos();
   }
-
+  
+  getTodos(): void {
+    this.todoservice.getTodos().subscribe(todos=> this.todos = todos);
+  }
 }

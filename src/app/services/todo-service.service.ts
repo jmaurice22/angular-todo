@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { Todo } from '../models/todo';
 
 @Injectable({
   providedIn: 'root'
@@ -6,4 +8,31 @@ import { Injectable } from '@angular/core';
 export class TodoServiceService {
 
   constructor() { }
+
+  todos: Todo[] = [
+    {
+    id:1,
+    title: 'Todo One',
+  },
+  {
+    id:1,
+    title: 'Todo Two',
+  
+  },
+  {
+    id:1,
+    title: 'Todo Three',
+   
+  },
+  {
+    id:4,
+    title: 'Todo Four'
+  }
+];
+
+getTodos(): Observable<Todo[]> {
+  // this.todos = this.todoservice.getTodos();
+  const todos = of(this.todos);
+  return todos;
+}
 }
