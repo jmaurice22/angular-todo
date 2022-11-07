@@ -35,4 +35,11 @@ getTodos(): Observable<Todo[]> {
   const todos = of(this.todos);
   return todos;
 }
+
+addTodo(newTodo: Todo): void {
+  let n = newTodo;
+  this.todos.push(n);
+  console.log(`added new todo to array:  ${n}`)
+
+}
 }

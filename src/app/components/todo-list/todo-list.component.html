@@ -1,15 +1,32 @@
 <!-- Todo: set container and lsit and place holder data-->
 <div class="container">
-    <!-- Content here -->
-    <div class="d-flex justify-content-between mt-3">
-        <h1>Todo Lsit</h1>
-        <div class="d-flex flex-column">
-            <label for="new-todo" class="d-flex justify-content-end" id="input-label">Add</label>
-           <input type="text" class="form-control" placeholder="Username" aria-label="Username" name="new-todo" (newTodo)="newTodo" />
-           <button type="submit" class="btn btn-success mt-2">Submit</button>
-        </div>
+  <!-- Content here -->
+  <div class="d-flex justify-content-between mt-3">
+    <h1>Todo Lsit</h1>
+    <div class="d-flex flex-column">
+      <div class="form-group">
+        <label
+          for="new-todo"
+          class="d-flex justify-content-end"
+          id="input-label"
+          >Add</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Todo"
+          aria-label="Todo"
+          name="new-todo"
+          [(ngModel)]="newTodo"
+        />
+        <button type="submit" class="btn btn-success mt-2" (click)="addTodo(newTodo)">Submit</button>
+      </div>
     </div>
+  </div>
+  <div class="container-md">
     <ul class="list-group" *ngFor="let todo of todos">
-        <app-todo [todo]="todo"></app-todo>
+      <app-todo [todo]="todo"></app-todo>
     </ul>
+
+  </div>
 </div>
