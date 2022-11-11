@@ -25,7 +25,8 @@ export class TodoListComponent implements OnInit {
       id:1,
       title: 'Todo Three',
      
-    }
+    },
+    
   ];
   
   constructor() { }
